@@ -1,0 +1,22 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net10.0</TargetFramework>
+    <RootNamespace>ECommerceApp_2</RootNamespace>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+	  <StartupObject>ECommerceApp_2.Program</StartupObject>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Folder Include="tests\IntegrationTests\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="18.4.0" />
+    <PackageReference Include="NUnit" Version="4.5.1" />
+    <PackageReference Include="NUnit3TestAdapter" Version="6.2.0" />
+  </ItemGroup>
+
+</Project>
