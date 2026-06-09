@@ -21,12 +21,16 @@ namespace ECommerceApp_2
             // 2. Sepete Ekleme
             Console.WriteLine("\n2. ADIM: Urunler sepete ekleniyor...");
             sepet.AddProduct(urun1);
-            sepet.AddProduct(urun2); 
+            sepet.AddProduct(urun2); // BUG: Stok 0 olduğu halde ekleniyor!
 
-            // 3. Sipariş Özeti
+            // 3. Sipariş Özeti ve Min Tutar Kontrolü
             Console.WriteLine($"\n3. ADIM: Sepet Ozeti");
             Console.WriteLine($"Sepetteki Urun Sayisi: {sepet.Items.Count}");
             Console.WriteLine($"Toplam Tutar: {sepet.GetTotal()} TL");
+
+            // Yeni özellik: Minimum Tutar Kontrolü
+            bool canCheckout = sepet.CanCheckout();
+            Console.WriteLine($"Siparis Onay Durumu: {(canCheckout ? "ONAYLANDI" : "REDDEDILDI (Min Tutar Hatasi)")}");
 
             // 4. İndirim ve Ödeme
             decimal indirimliFiyat = servis.ApplyDiscount(sepet.GetTotal(), 1000);
